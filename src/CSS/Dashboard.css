@@ -1,0 +1,123 @@
+.MainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: margin .20s linear;
+}
+
+.slideMainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 160px;
+    margin-right: -3.7%;
+    transition: margin .20s linear;
+}
+
+.bulbContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center; 
+    flex-direction: column;
+    margin-top: 15%;
+}
+
+.bulbImage{
+    width: 100px;
+    height: 100px;
+    filter: contrast(0%);
+    align-self: center;
+}
+
+h2 {
+    align-self: center;
+    color: gray;
+}
+
+.noteTaker{
+    display: flex;
+    margin-top: 2em;
+    align-self: center;   
+}
+
+.gridView{
+    margin-left: 17%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.listView{
+    display: flex;
+    width: 550px;
+    max-width: 550px;
+    margin: auto;
+    margin-top: 1em;
+}
+
+@media (max-width: 1200px){
+    .gridView{
+        margin-left: 10%;
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 680px){
+
+    .gridView{
+        margin: auto;
+        margin-left: 10%;
+        padding: 10px;
+        width: 80%; 
+    }
+
+    .slideNotesMainContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        transition: none;
+    }
+
+    .listView{
+        display: flex;
+        width: 500px;
+        max-width: 500px;
+        margin: auto;
+        margin-top: 1em;
+    }
+}
+
+@media (max-width: 540px){
+    .listView{
+        display: flex;
+        width: 350px;
+        max-width: 350px;
+        margin: auto;
+        margin-top: 1em;
+    }
+
+    .gridView{
+        margin: auto;
+        width: 97%; 
+    }
+}
+
+@media (max-width: 400px){
+    .notesContainer{
+        margin-left: 0%;
+        margin-right: 0%;
+        padding: 10px 0px;
+    }
+
+    .listView{
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        margin: auto;
+        margin-top: 1em;
+    }
+}

@@ -1,0 +1,54 @@
+.notesMainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: margin .20s linear;
+}
+
+.slideNotesMainContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 160px;
+    margin-right: -3.7%;
+    transition: margin .20s linear;
+}
+
+.noteTaker{
+    display: flex;
+    margin-top: 2em;
+    align-self: center;
+    background-color: chartreuse;
+    
+}
+
+.notesContainer{
+    margin-left: 8%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 680px){
+    .slideNotesMainContainer{
+        margin-left: 0px;
+        margin-right: 0px;
+        transition: none;
+    }
+}
+
+@media (max-width: 680px){
+    .notesContainer{
+        margin-left: 0%;
+        margin-right: 1%;
+        padding: 10px; 
+    }
+}
+
+@media (max-width: 400px){
+    .notesContainer{
+        margin-left: 0%;
+        margin-right: 0%;
+        padding: 10px 0px; 
+    }
+}

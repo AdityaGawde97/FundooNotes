@@ -1,0 +1,165 @@
+#loader1{
+    width:31%;
+    background-color: white;
+    margin-left: 31em;
+    position: absolute;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin-top: 0.1em;
+}
+  
+#load1{
+    width: 0;
+    height: 0.3em;
+    border-radius: 8px;
+    background-color: dodgerblue;
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid lightgray;
+    margin: 5% 34%;
+    padding: 3%;
+    border-radius: 8px;
+}
+
+.btnContain{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.title1{
+    font-size: 1.7em;
+    padding: 1%;
+    font-family: 'Poppins', sans-serif;
+}
+  
+.subtitle1{
+    font-size: 1.2em;
+    padding: 1%;
+    font-family: 'Poppins', sans-serif;
+    margin: auto;
+}
+
+.titleContainer{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+@media (max-width: 1200px){
+    #loader1{
+        width:59%;
+        background-color: white;
+        margin-left: 15em;
+        position: absolute;
+        border: 1px solid white;
+        border-radius: 8px;
+        margin-top: 0.1em;
+      }
+      
+    #load1{
+        width: 0;
+        height: 0.3em;
+        border-radius: 8px;
+        background-color: dodgerblue;
+    }
+    .mainContainer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid lightgray;
+        margin: 5% 20%;
+        padding: 3%;
+        border-radius: 8px;
+    }
+    
+    .btnContain{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .title1{
+        font-size: 1.7em;
+        padding: 1%;
+        font-family: 'Poppins', sans-serif;
+    }
+      
+    .subtitle1{
+        font-size: 1.2em;
+        padding: 1%;
+        font-family: 'Poppins', sans-serif;
+        margin: auto;
+    }
+    
+    .titleContainer{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+}
+  
+  @media (max-width: 700px){
+    #loader1{
+        width:98%;
+        background-color: white;
+        margin-left: 0em;
+        position: absolute;
+        border: 1px solid white;
+        border-radius: 8px;
+        margin-top: -0.8em;
+      }
+      
+    #load1{
+        width: 0;
+        height: 0.3em;
+        border-radius: 8px;
+        background-color: dodgerblue;
+    }
+    .mainContainer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid white;
+        margin: 4% auto;
+        padding: 3%;
+        border-radius: 8px;
+    }
+    
+    .btnContain{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    
+    .title1{
+        font-size: 1.7em;
+        padding: 1%;
+        font-family: 'Poppins', sans-serif;
+    }
+      
+    .subtitle1{
+        font-size: 1.2em;
+        padding: 1%;
+        font-family: 'Poppins', sans-serif;
+        margin: auto;
+    }
+    
+    .titleContainer{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+}
+  
+  

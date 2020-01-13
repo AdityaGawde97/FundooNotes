@@ -1,0 +1,1 @@
+export const CURRENT_LABEL_PAGE = 'CURRENT_LABEL_PAGE'
