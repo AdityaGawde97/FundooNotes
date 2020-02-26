@@ -31,7 +31,14 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "no-restricted-globals": [
+        "error",
+        "event",
+        "self"
+      ]
+    }
   },
   "browserslist": {
     "production": [

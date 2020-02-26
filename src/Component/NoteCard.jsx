@@ -30,14 +30,24 @@ export default function NoteCard(props) {
     const [more, setMore] = React.useState(false)
     const [labels, setLabels] = React.useState(null);
 
-    // const todayDate = moment().format('YYYY-DD-MM')
-    // const tomorrowDate = moment().add('days', 1).format('YYYY-DD-MM')
+    const todayDate = moment().format('YYYY-MM-DD')
+    const currentTime = moment().format('h:mm A')
+
+    
 
     React.useEffect(() => {
         getLabels((snapshot) => {
             setLabels(snapshot)
         })
     }, []);
+
+    setTimeout(() => {
+        const remind = props.NoteObj.ReminderDate === todayDate && props.NoteObj.ReminderTime === currentTime
+        if (remind) {
+            setSnack(true)
+            setMsg(`${moment(props.NoteObj.ReminderDate).format('MMM D')}, ${props.NoteObj.ReminderTime} - ${props.NoteObj.Title}`)
+        }
+    }, 500)
 
     return (
         <>
@@ -112,7 +122,7 @@ export default function NoteCard(props) {
                 >
                     {
                         props.NoteObj.ReminderDate !== null && props.NoteObj.ReminderDate !== undefined &&
-                        <Chip 
+                        <Chip
                             icon={<ClockIcon />}
                             label={
                                 moment(props.NoteObj.ReminderDate).format('MMM D') + ', ' +
@@ -122,7 +132,7 @@ export default function NoteCard(props) {
                             style={{
                                 margin: '10px 4px 4px 0px'
                             }}
-                            onDelete={()=>removeReminder(props.Notekey)}
+                            onDelete={() => removeReminder(props.Notekey)}
                         />
                     }
                     {
@@ -149,7 +159,7 @@ export default function NoteCard(props) {
                     })}
                 >
 
-                    <SetReminder Notekey={props.Notekey} /> 
+                    <SetReminder Notekey={props.Notekey} />
 
                     <IconButton className={classes.iconButton}>
                         <PersonAddIcon fontSize="small" />

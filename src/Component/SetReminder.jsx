@@ -18,8 +18,8 @@ function SetReminder(props) {
     const classes = useStyles();
 
     const todayDate = moment().format('YYYY-MM-DD')
-    //const currentTime = moment().format('h:mm a')
-    const tomorrowDate = moment().add('days', 1).format('YYYY-MM-DD')
+    //const currentTime = moment().format('h:mm A')
+    const tomorrowDate = moment().add(1, 'days').format('YYYY-MM-DD')
     const laterTime = moment().add(3, 'hour').format('h:mm A')
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -129,8 +129,8 @@ function SetReminder(props) {
         >
             <List className={classes.timeList} dense>
                 <ListItem button dense
-                    onClick={() => { 
-                        setTime('8:00 AM') 
+                    onClick={() => {
+                        setTime('8:00 AM')
                         handleTimeSelectClose()
                     }}
                 >
@@ -174,7 +174,7 @@ function SetReminder(props) {
                 </ListItem>
                 <ListItem button dense
                     onClick={
-                        ()=>{
+                        () => {
                             handleTimeSelectClose()
                         }
                     }

@@ -6,7 +6,7 @@ import { List, Divider, ListItem, ListItemIcon, ListItemText } from '@material-u
 import { EmojiObjectsOutlined, NotificationsOutlined } from "@material-ui/icons";
 import { CreateOutlined, ArchiveOutlined, DeleteOutlined } from '@material-ui/icons';
 import { useStyles, GrayTooltip } from "../CSS/NavBarCss";
-import { toggleDrawerOpen, toggleDrawerClose } from "../Redux/ToggleDrawer/DrawerAction";
+import { toggleDrawerOpen, toggleDrawerClose, toggleDrawer } from "../Redux/ToggleDrawer/DrawerAction";
 import { setLabelPage } from '../Redux/LabelPages/LabelsAction'
 import EditLabels from "./EditLabels";
 import {getLabels} from '../Firebase/FirebaseServices';
@@ -28,7 +28,7 @@ function DrawerMenu(props) {
     const [dialogState, setDialogState] = React.useState(false);
     const [labels, setLabels] = React.useState(null);
 
-    const drawerOpen = useSelector(state => state.drawer.drawerOpen)
+    const drawerOpen = useSelector(state => state.drawer.dOpen)
     const dispatch = useDispatch()
 
     const sideList = (
@@ -158,7 +158,8 @@ function DrawerMenu(props) {
                     className={classes.menuButton}
                     color="inherit"
                     aria-label="open drawer"
-                    onClick={() => !drawerOpen ? dispatch(toggleDrawerOpen()) : dispatch(toggleDrawerClose())}
+                    //onClick={() => !drawerOpen ? dispatch(toggleDrawerOpen()) : dispatch(toggleDrawerClose())}
+                    onClick={()=>dispatch(toggleDrawer())}
                 >
                     <Menu />
                 </IconButton>

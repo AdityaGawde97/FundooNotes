@@ -205,7 +205,7 @@ export default class Register extends Component{
                                 <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
                                 <OutlinedInput
                                     id="outlined-adornment-password"
-                                    type={!this.state.showPassword ? 'text' : 'password'}
+                                    type={this.state.showPassword ? 'text' : 'password'}
                                     autoComplete={false}
                                     value={this.state.password}
                                     name="password"
@@ -218,7 +218,7 @@ export default class Register extends Component{
                                         onMouseDown={this.handleMouseDownPassword}
                                         edge="end"
                                         >
-                                        {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
+                                        {!this.state.showPassword ? <Visibility /> : <VisibilityOff />}
                                         </IconButton>
                                     </InputAdornment>
                                     }

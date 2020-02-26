@@ -1,7 +1,8 @@
 import { TOGGLE_DRAWER_OPEN, TOGGLE_DRAWER_CLOSE } from "./DrawerActionType";
 
 const initialState = {
-    drawerOpen: false
+    drawerOpen: false,
+    dOpen: false
 }
 
 const DrawerReducer = (state = initialState, action) => {
@@ -9,14 +10,19 @@ const DrawerReducer = (state = initialState, action) => {
        
         case TOGGLE_DRAWER_OPEN:
             return {
-                ...state,
+                // ...state,
                 drawerOpen: true
             }
 
         case TOGGLE_DRAWER_CLOSE:
             return {
-                ...state,
+                // ...state,
                 drawerOpen: false
+            }
+
+        case 'TOGGLE':
+            return {
+                dOpen: !state.dOpen
             }
 
         default: return state

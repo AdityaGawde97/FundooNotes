@@ -11,3 +11,9 @@ export const toggleDrawerClose = () => {
         type: TOGGLE_DRAWER_CLOSE,
     }
 }
+
+export const toggleDrawer = () => {
+    return {
+        type: 'TOGGLE'
+    }
+}

@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 import { Container, ClickAwayListener, Typography } from "@material-ui/core";
 import Masonry from 'react-masonry-component';
 import bulbImage from '../images/bulb.png'
+import worker from './worker.js';
+import WebWorker from './workerSetup';
 
 class Notes extends React.Component {
     constructor(props) {
@@ -69,8 +71,8 @@ class Notes extends React.Component {
     }
 
     isEmpty = (obj) => {
-        for(var key in obj) {
-            if(obj.hasOwnProperty(key))
+        for (var key in obj) {
+            if (obj.hasOwnProperty(key))
                 return false;
         }
         return true;
@@ -84,14 +86,13 @@ class Notes extends React.Component {
             keys.push(key);
         }
         for (let i = keys.length - 1; i >= 0; i--) {
-          let value = object[keys[i]];
-          newObject[keys[i]]= value;
-        }       
+            let value = object[keys[i]];
+            newObject[keys[i]] = value;
+        }
         return newObject;
-      }
+    }
 
-    componentDidMount() {
-
+    fetchNotes = () => {
         getNotes((snapObj) => {
             let pinNotes = {}
             let unpinNotes = {}
@@ -115,7 +116,25 @@ class Notes extends React.Component {
                 })
             }
         })
+    }
 
+    seperateNotesInWorker = () => {
+        if (window.Worker) {
+            this.worker = new WebWorker(worker);
+            getNotes((snapObj) => {
+                this.worker.postMessage(snapObj);
+            })
+            this.worker.addEventListener('message', e => {
+                this.setState({
+                    pinNotes: this.reverseObject(e.data[0]),
+                    unpinNotes: this.reverseObject(e.data[1])
+                })
+            })
+        }
+    }
+
+    componentDidMount() {
+        this.seperateNotesInWorker()
     }
 
     render() {
@@ -141,8 +160,8 @@ class Notes extends React.Component {
                             }
                         </div>
                     </ClickAwayListener>
-                    
-                    { 
+
+                    {
                         this.state.pinNotes === null && this.state.unpinNotes === null &&
                         <div className="bulbContainer">
                             <img alt="temp background" src={bulbImage} className="bulbImage" />
@@ -196,6 +215,7 @@ class Notes extends React.Component {
                         }
                     </Masonry>
                 </div>
+
             </Container>
         );
     }
@@ -204,7 +224,7 @@ class Notes extends React.Component {
 
 const mapToStateProps = state => {
     return {
-        drawerOpen: state.drawer.drawerOpen,
+        drawerOpen: state.drawer.dOpen,
         toggleView: state.view.toggleView
     }
 }
